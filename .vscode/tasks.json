@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: clang build active file",
+            "command": "clang",
+            "args": [
+                "-std=c17",
+                "-Wall",
+                "-g",
+                "${fileDirname}/main.c",
+                "${fileDirname}/3Dfunc.c",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-I${workspaceFolder}/include",
+                "-lSDL2",
+                "-L${workspaceFolder}/lib"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build the active file using clang with C17 standard and SDL2."
+        }
+    ]
+}

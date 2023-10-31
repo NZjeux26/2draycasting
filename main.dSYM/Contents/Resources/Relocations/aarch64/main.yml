@@ -1,0 +1,19 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/pbrown/Documents/CodingT/2draycasting/main'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000034F4, symSize: 0x28C }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _window, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offsetInCU: 0x77, offset: 0x77, size: 0x8, addend: 0x0, symName: _renderer, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x72B, offset: 0x72B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000034F4, symSize: 0x28C }
+  - { offsetInCU: 0x837, offset: 0x837, size: 0x8, addend: 0x0, symName: _createWindow, symObjAddr: 0x28C, symBinAddr: 0x100003780, symSize: 0x114 }
+  - { offsetInCU: 0x26, offset: 0x18D7, size: 0x8, addend: 0x0, symName: _createVector3, symObjAddr: 0x0, symBinAddr: 0x100003894, symSize: 0x3C }
+  - { offsetInCU: 0x33, offset: 0x18E4, size: 0x8, addend: 0x0, symName: _createVector3, symObjAddr: 0x0, symBinAddr: 0x100003894, symSize: 0x3C }
+  - { offsetInCU: 0x85, offset: 0x1936, size: 0x8, addend: 0x0, symName: _createRay, symObjAddr: 0x3C, symBinAddr: 0x1000038D0, symSize: 0x90 }
+  - { offsetInCU: 0xCA, offset: 0x197B, size: 0x8, addend: 0x0, symName: _createBoundry, symObjAddr: 0xCC, symBinAddr: 0x100003960, symSize: 0x98 }
+  - { offsetInCU: 0x12B, offset: 0x19DC, size: 0x8, addend: 0x0, symName: _matmul, symObjAddr: 0x164, symBinAddr: 0x1000039F8, symSize: 0xE0 }
+  - { offsetInCU: 0x187, offset: 0x1A38, size: 0x8, addend: 0x0, symName: _map, symObjAddr: 0x244, symBinAddr: 0x100003AD8, symSize: 0xC8 }
+  - { offsetInCU: 0x1F5, offset: 0x1AA6, size: 0x8, addend: 0x0, symName: _projectPoint, symObjAddr: 0x30C, symBinAddr: 0x100003BA0, symSize: 0x60 }
+  - { offsetInCU: 0x235, offset: 0x1AE6, size: 0x8, addend: 0x0, symName: _translate, symObjAddr: 0x36C, symBinAddr: 0x100003C00, symSize: 0x50 }
+  - { offsetInCU: 0x275, offset: 0x1B26, size: 0x8, addend: 0x0, symName: _createSphere, symObjAddr: 0x3BC, symBinAddr: 0x100003C50, symSize: 0x20C }
+...

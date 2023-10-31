@@ -1,0 +1,18 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/pbrown/Documents/CodingT/2draycasting/boundry'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000037AC, symSize: 0xEC }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _window, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offsetInCU: 0x77, offset: 0x77, size: 0x8, addend: 0x0, symName: _renderer, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x72B, offset: 0x72B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000037AC, symSize: 0xEC }
+  - { offsetInCU: 0x78B, offset: 0x78B, size: 0x8, addend: 0x0, symName: _createWindow, symObjAddr: 0xEC, symBinAddr: 0x100003898, symSize: 0x114 }
+  - { offsetInCU: 0x26, offset: 0x17A3, size: 0x8, addend: 0x0, symName: _createVector3, symObjAddr: 0x0, symBinAddr: 0x1000039AC, symSize: 0x3C }
+  - { offsetInCU: 0x33, offset: 0x17B0, size: 0x8, addend: 0x0, symName: _createVector3, symObjAddr: 0x0, symBinAddr: 0x1000039AC, symSize: 0x3C }
+  - { offsetInCU: 0x85, offset: 0x1802, size: 0x8, addend: 0x0, symName: _matmul, symObjAddr: 0x3C, symBinAddr: 0x1000039E8, symSize: 0xE0 }
+  - { offsetInCU: 0xE1, offset: 0x185E, size: 0x8, addend: 0x0, symName: _map, symObjAddr: 0x11C, symBinAddr: 0x100003AC8, symSize: 0xC8 }
+  - { offsetInCU: 0x14F, offset: 0x18CC, size: 0x8, addend: 0x0, symName: _projectPoint, symObjAddr: 0x1E4, symBinAddr: 0x100003B90, symSize: 0x60 }
+  - { offsetInCU: 0x18F, offset: 0x190C, size: 0x8, addend: 0x0, symName: _createSphere, symObjAddr: 0x244, symBinAddr: 0x100003BF0, symSize: 0x20C }
+  - { offsetInCU: 0x26, offset: 0x1A7B, size: 0x8, addend: 0x0, symName: _createBoundry, symObjAddr: 0x0, symBinAddr: 0x100003DFC, symSize: 0x98 }
+  - { offsetInCU: 0x33, offset: 0x1A88, size: 0x8, addend: 0x0, symName: _createBoundry, symObjAddr: 0x0, symBinAddr: 0x100003DFC, symSize: 0x98 }
+...
