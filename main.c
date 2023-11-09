@@ -16,7 +16,10 @@ int main(int argc, char* argv[]) {
     //create SDL window
     createWindow();
     Boundry wall = createBoundry(300,100,300,300);
-    Ray r = createRay(100,200);
+    Ray r = createRay(100,200,0);
+    float mX = 0;
+    float mY = 0;
+    
     //Main loop
 
     int is_running = 1;
@@ -26,17 +29,25 @@ int main(int argc, char* argv[]) {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 is_running = 0;
-            }    
+            }  
+            else if(event.type == SDL_MOUSEMOTION){
+                mX = event.motion.x;
+                mY = event.motion.y;
+            }
         }
-
+        
         //Clear the renderer
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         float transX = DISPLAY_WIDTH / 2;
         float transY = DISPLAY_LENGTH / 2;
+        float iX = 0;
+        float iY = 0;
 
         translate(renderer,transX,transY);
         
+        lookAt(&r,mX,mY);
+
         //draw the boundry line
         float x1 = wall.a.x; 
         float y1 = wall.a.y;
@@ -48,8 +59,19 @@ int main(int argc, char* argv[]) {
         float rdx = r.dir.x;
         float rdy = r.dir.y;
 
+        int found = cast(r,wall,&iX,&iY);
+
+        SDL_Color sqcolour = {255,255,0,255};
+
+        //if intersection is found, then draw a square in the x/y pos of the interception.
+        if(found == 1){
+           drawFilledSquare(renderer,iX + transX,iY + transY,10,sqcolour);
+           //printf("X: %0.2f, Y: %0.2f\n", iX, iY);
+        }
+
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderDrawLine(renderer, x1 + transX, y1 + transY, x2 + transX, y2 + transY);
+        
         //we use the ray's position rpx and rpy as the starting point, and we add the ray's direction rdx and rdy to draw the line in the direction of the ray.
         SDL_RenderDrawLine(renderer, rpx + transX, rpy + transY, (rpx + rdx * 10) + transX, (rpy + rdy * 10) + transY);
         

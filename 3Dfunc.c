@@ -10,14 +10,14 @@ Vector3 createVector3(float x, float y, float z){
     vec.z = z;
     return vec;
 }
-
-Ray createRay(float x, float y){
+//Function to create a ray with a given position (x, y, z) and a default direction (1.0, 0.0, 0.0).
+Ray createRay(float x, float y, float z){
     Ray ray;
-    ray.pos = createVector3(x,y,0.0);
+    ray.pos = createVector3(x,y,z);
     ray.dir = createVector3(1.0,0.0,0.0);
     return ray;
 }
-
+//Function to create a boundary with two points (x1, y1) and (x2, y2) in 2D space.
 Boundry createBoundry(float x1, float y1, float x2, float y2){
     Boundry boundry;
     boundry.a = createVector3(x1,y1,0.0);
@@ -25,7 +25,32 @@ Boundry createBoundry(float x1, float y1, float x2, float y2){
     return boundry;
 }
 
-int cast(Ray ray, Boundry wall, float* interX, float* y interY){
+Particle createParticle(float x, float y, Ray rays[]){
+    Particle particle;
+    particle.pos = createVector3(x,y,0);
+    for (int i = 0; i < 360; i+=10){
+        double radians = i * (2.0 * M_PI) / 360;
+        particle.rays[i] = createRay(particle.pos.x,particle.pos.y, radians * i);
+    }
+    return particle;
+}
+
+//Function to set the direction of a ray to look at a specified point (x, y).
+void lookAt(Ray* ray, float x, float y){
+    ray->dir.x = x - ray->pos.x;
+    ray->dir.y = y - ray->pos.y;
+
+    float length = sqrt(ray->dir.x * ray->dir.x + ray->dir.y * ray->dir.y);
+    //printf("Length %f\n",length);
+    if(length > 0){
+        ray->dir.x /= length;
+        ray->dir.y /= length;
+    }
+}
+
+//Function to check for intersection between a ray and a boundary, returning the intersection point.
+//Returns 1 if there is an intersection and updates interX and interY, otherwise returns 0.
+int cast(Ray ray, Boundry wall, float* interX, float* interY){
     float x1 = wall.a.x;
     float y1 = wall.a.y;
     float x2 = wall.b.x;
@@ -33,8 +58,36 @@ int cast(Ray ray, Boundry wall, float* interX, float* y interY){
 
     float x3 = ray.pos.x;
     float y3 = ray.pos.y;
-    float x3 = ray.pos.x + ray.dir.x;
-    float y4 = ray.pos.y + ray.dir.y
+    float x4 = ray.pos.x + ray.dir.x;
+    float y4 = ray.pos.y + ray.dir.y;
+
+    //the denomator for working out t and u :https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection
+    float den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+    //if the den is 0 that means the ray and line(s) are paraellel and do not intersect. 
+    if(den == 0.0){
+        return 0;
+    }
+
+    float t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
+    float u = -((x1-x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
+    if(t > 0.0 && t < 1.0 && u> 0.0){
+        *interX = x1 + t * (x2 - x1);
+        *interY = y1 + t * (y2 - y1);
+        return 1;
+    }
+    return 0;
+}
+//stright copied from GPT, needed a function to draw a square at a given point to show where the intersections occur.
+void drawFilledSquare(SDL_Renderer* renderer, float x, float y, int size, SDL_Color color) {
+    SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
+
+    // Calculate the coordinates of the square's corners
+    int x1 = x - size / 2;
+    int y1 = y - size / 2;
+
+    // Draw a filled square using SDL_RenderFillRect
+    SDL_Rect squareRect = {x1, y1, size, size};
+    SDL_RenderFillRect(renderer, &squareRect);
 }
 //matrix multiplication 
 void matmul(float matrix[3][3], Vector3 *vector) {
