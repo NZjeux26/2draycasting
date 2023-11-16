@@ -28,6 +28,26 @@
                 "isDefault": true
             },
             "detail": "Build the active file using clang with C17 standard and SDL2."
+        },
+        {
+            "type": "lldb",
+            "label": "C/C++: clang debug active file",
+            "command": "lldb",
+            "args": [
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "windows": {
+                "args": ["${fileDirname}/${fileBasenameNoExtension}.exe"]
+            },
+            "preLaunchTask": "C/C++: clang build active file",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Debug the active file using lldb."
         }
     ]
 }

@@ -31,7 +31,7 @@ void drawFilledSquare(SDL_Renderer* renderer, float x, float y, int size, SDL_Co
 Ray createRay(float x, float y, float z);
 Boundry createBoundry(float x1, float y1, float x2, float y2);
 Vector3 createVector3(float x, float y, float z);
-Particle createParticle(float x, float y, Ray rays[]);
+Particle createParticle(float x, float y);
 void matmul(float matrix[3][3], Vector3 *vector);
 float map(float value, float fromLow, float fromHigh, float toLow, float toHigh);
 void projectPoint(Vector3* point3D, float distance);

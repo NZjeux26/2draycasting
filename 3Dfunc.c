@@ -11,13 +11,18 @@ Vector3 createVector3(float x, float y, float z){
     return vec;
 }
 //Function to create a ray with a given position (x, y, z) and a default direction (1.0, 0.0, 0.0).
-Ray createRay(float x, float y, float z){
+Ray createRay(float x, float y, float angle){
     Ray ray;
-    ray.pos = createVector3(x,y,z);
-    ray.dir = createVector3(1.0,0.0,0.0);
+    ray.pos = createVector3(x,y,0.0);
+    
+    float aradians = angle * (M_PI / 180);
+    
+    ray.dir.x = cos(aradians);
+    ray.dir.y = -sin(aradians);
+    ray.dir.z = 0.0;
     return ray;
 }
-//Function to create a boundary with two points (x1, y1) and (x2, y2) in 2D space.
+//Function to create a boundary with two points (x1, y1) and (x2, y2) in 2D space. These 'walls' are what stops the rays.
 Boundry createBoundry(float x1, float y1, float x2, float y2){
     Boundry boundry;
     boundry.a = createVector3(x1,y1,0.0);
@@ -25,12 +30,12 @@ Boundry createBoundry(float x1, float y1, float x2, float y2){
     return boundry;
 }
 
-Particle createParticle(float x, float y, Ray rays[]){
+Particle createParticle(float x, float y){
     Particle particle;
     particle.pos = createVector3(x,y,0);
-    for (int i = 0; i < 360; i+=10){
-        double radians = i * (2.0 * M_PI) / 360;
-        particle.rays[i] = createRay(particle.pos.x,particle.pos.y, radians * i);
+
+    for (int i = 0; i < 360; i++){
+        particle.rays[i] = createRay(particle.pos.x,particle.pos.y, i);
     }
     return particle;
 }
