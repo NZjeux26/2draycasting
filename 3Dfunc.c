@@ -11,9 +11,9 @@ Vector3 createVector3(float x, float y, float z){
     return vec;
 }
 //Function to create a ray with a given position (x, y, z) and a default direction (1.0, 0.0, 0.0).
-Ray createRay(float x, float y, float angle){
+Ray createRay(Vector3 pos, float angle){
     Ray ray;
-    ray.pos = createVector3(x,y,0.0);
+    ray.pos = pos;
     
     float aradians = angle * (M_PI / 180);
     
@@ -35,7 +35,7 @@ Particle createParticle(float x, float y){
     particle.pos = createVector3(x,y,0);
 
     for (int i = 0; i < 360; i++){
-        particle.rays[i] = createRay(particle.pos.x,particle.pos.y, i);
+        particle.rays[i] = createRay(particle.pos,i);
     }
     return particle;
 }
@@ -53,9 +53,18 @@ void lookAt(Ray* ray, float x, float y){
     }
 }
 
+float dist(Vector3 v1, Vector3 v2){
+    float dx = v2.x - v1.x;
+    float dy = v2.y - v1.y;
+    float dz = v2.z - v1.z;
+
+    return sqrt(dx * dx + dy * dy + dz * dz);
+}
+
 //Function to check for intersection between a ray and a boundary, returning the intersection point.
 //Returns 1 if there is an intersection and updates interX and interY, otherwise returns 0.
-int cast(Ray ray, Boundry wall, float* interX, float* interY){
+Vector3 cast(Ray ray, Boundry wall, float interX, float interY){
+    Vector3 pt = {0,0,0}; //create blank vector
     float x1 = wall.a.x;
     float y1 = wall.a.y;
     float x2 = wall.b.x;
@@ -70,17 +79,18 @@ int cast(Ray ray, Boundry wall, float* interX, float* interY){
     float den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
     //if the den is 0 that means the ray and line(s) are paraellel and do not intersect. 
     if(den == 0.0){
-        return 0;
+        return pt;
     }
 
     float t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
     float u = -((x1-x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
     if(t > 0.0 && t < 1.0 && u> 0.0){
-        *interX = x1 + t * (x2 - x1);
-        *interY = y1 + t * (y2 - y1);
-        return 1;
+        interX = x1 + t * (x2 - x1);    //feed the X and Y of the intercept into the blank vector and return
+        interY = y1 + t * (y2 - y1);
+        pt = createVector3(interX,interY, 0);
+        return pt;
     }
-    return 0;
+    return pt;  //else return the blank vector
 }
 //stright copied from GPT, needed a function to draw a square at a given point to show where the intersections occur.
 void drawFilledSquare(SDL_Renderer* renderer, float x, float y, int size, SDL_Color color) {
