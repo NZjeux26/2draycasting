@@ -135,7 +135,7 @@ void projectPoint(Vector3* point3D, float distance){
 void translate(SDL_Renderer* renderer, float x, float y){
     SDL_RenderSetClipRect(renderer, &(SDL_Rect){x, y, 0, 0});
 }
-//takes in a 3d vector along with the total points wanted and the desired radius.
+//takes in a 3d vector along with the total points wanted and the desired radius. **doesn'tm work, the code is right but when used in a function like this it doesn't quite work
 void createSphere(int total, Vector3 globe[total][total], float r){
           for (int i = 0; i < total + 1; i++){
             float lat = map(i, 0,total, 0, M_PI);

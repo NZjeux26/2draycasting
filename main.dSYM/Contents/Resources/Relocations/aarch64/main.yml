@@ -2,24 +2,24 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/pbrown/Documents/CodingT/2draycasting/main'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002C1C, symSize: 0x630 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000029C0, symSize: 0x834 }
   - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _window, symBinAddr: 0x100008068, symSize: 0x0 }
   - { offsetInCU: 0x77, offset: 0x77, size: 0x8, addend: 0x0, symName: _renderer, symBinAddr: 0x100008000, symSize: 0x0 }
   - { offsetInCU: 0xA1, offset: 0xA1, size: 0x8, addend: 0x0, symName: _walls, symBinAddr: 0x100008008, symSize: 0x0 }
-  - { offsetInCU: 0x7AF, offset: 0x7AF, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002C1C, symSize: 0x630 }
-  - { offsetInCU: 0xA26, offset: 0xA26, size: 0x8, addend: 0x0, symName: _createWindow, symObjAddr: 0x630, symBinAddr: 0x10000324C, symSize: 0x114 }
-  - { offsetInCU: 0x26, offset: 0x1A9D, size: 0x8, addend: 0x0, symName: _createVector3, symObjAddr: 0x0, symBinAddr: 0x100003360, symSize: 0x3C }
-  - { offsetInCU: 0x33, offset: 0x1AAA, size: 0x8, addend: 0x0, symName: _createVector3, symObjAddr: 0x0, symBinAddr: 0x100003360, symSize: 0x3C }
-  - { offsetInCU: 0x85, offset: 0x1AFC, size: 0x8, addend: 0x0, symName: _createRay, symObjAddr: 0x3C, symBinAddr: 0x10000339C, symSize: 0x98 }
-  - { offsetInCU: 0xD8, offset: 0x1B4F, size: 0x8, addend: 0x0, symName: _createBoundry, symObjAddr: 0xD4, symBinAddr: 0x100003434, symSize: 0x98 }
-  - { offsetInCU: 0x139, offset: 0x1BB0, size: 0x8, addend: 0x0, symName: _createParticle, symObjAddr: 0x16C, symBinAddr: 0x1000034CC, symSize: 0xD0 }
-  - { offsetInCU: 0x19A, offset: 0x1C11, size: 0x8, addend: 0x0, symName: _lookAt, symObjAddr: 0x23C, symBinAddr: 0x10000359C, symSize: 0xC0 }
-  - { offsetInCU: 0x1E8, offset: 0x1C5F, size: 0x8, addend: 0x0, symName: _dist, symObjAddr: 0x2FC, symBinAddr: 0x10000365C, symSize: 0x84 }
-  - { offsetInCU: 0x248, offset: 0x1CBF, size: 0x8, addend: 0x0, symName: _cast, symObjAddr: 0x380, symBinAddr: 0x1000036E0, symSize: 0x22C }
-  - { offsetInCU: 0x344, offset: 0x1DBB, size: 0x8, addend: 0x0, symName: _drawFilledSquare, symObjAddr: 0x5AC, symBinAddr: 0x10000390C, symSize: 0xB4 }
-  - { offsetInCU: 0x3CA, offset: 0x1E41, size: 0x8, addend: 0x0, symName: _matmul, symObjAddr: 0x660, symBinAddr: 0x1000039C0, symSize: 0xE0 }
-  - { offsetInCU: 0x426, offset: 0x1E9D, size: 0x8, addend: 0x0, symName: _map, symObjAddr: 0x740, symBinAddr: 0x100003AA0, symSize: 0xC8 }
-  - { offsetInCU: 0x494, offset: 0x1F0B, size: 0x8, addend: 0x0, symName: _projectPoint, symObjAddr: 0x808, symBinAddr: 0x100003B68, symSize: 0x60 }
-  - { offsetInCU: 0x4D4, offset: 0x1F4B, size: 0x8, addend: 0x0, symName: _translate, symObjAddr: 0x868, symBinAddr: 0x100003BC8, symSize: 0x50 }
-  - { offsetInCU: 0x514, offset: 0x1F8B, size: 0x8, addend: 0x0, symName: _createSphere, symObjAddr: 0x8B8, symBinAddr: 0x100003C18, symSize: 0x20C }
+  - { offsetInCU: 0x7AF, offset: 0x7AF, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000029C0, symSize: 0x834 }
+  - { offsetInCU: 0xAA8, offset: 0xAA8, size: 0x8, addend: 0x0, symName: _createWindow, symObjAddr: 0x834, symBinAddr: 0x1000031F4, symSize: 0x114 }
+  - { offsetInCU: 0x26, offset: 0x1B98, size: 0x8, addend: 0x0, symName: _createVector3, symObjAddr: 0x0, symBinAddr: 0x100003308, symSize: 0x3C }
+  - { offsetInCU: 0x33, offset: 0x1BA5, size: 0x8, addend: 0x0, symName: _createVector3, symObjAddr: 0x0, symBinAddr: 0x100003308, symSize: 0x3C }
+  - { offsetInCU: 0x85, offset: 0x1BF7, size: 0x8, addend: 0x0, symName: _createRay, symObjAddr: 0x3C, symBinAddr: 0x100003344, symSize: 0x98 }
+  - { offsetInCU: 0xD8, offset: 0x1C4A, size: 0x8, addend: 0x0, symName: _createBoundry, symObjAddr: 0xD4, symBinAddr: 0x1000033DC, symSize: 0x98 }
+  - { offsetInCU: 0x139, offset: 0x1CAB, size: 0x8, addend: 0x0, symName: _createParticle, symObjAddr: 0x16C, symBinAddr: 0x100003474, symSize: 0xD0 }
+  - { offsetInCU: 0x19A, offset: 0x1D0C, size: 0x8, addend: 0x0, symName: _lookAt, symObjAddr: 0x23C, symBinAddr: 0x100003544, symSize: 0xC0 }
+  - { offsetInCU: 0x1E8, offset: 0x1D5A, size: 0x8, addend: 0x0, symName: _dist, symObjAddr: 0x2FC, symBinAddr: 0x100003604, symSize: 0x84 }
+  - { offsetInCU: 0x248, offset: 0x1DBA, size: 0x8, addend: 0x0, symName: _cast, symObjAddr: 0x380, symBinAddr: 0x100003688, symSize: 0x22C }
+  - { offsetInCU: 0x344, offset: 0x1EB6, size: 0x8, addend: 0x0, symName: _drawFilledSquare, symObjAddr: 0x5AC, symBinAddr: 0x1000038B4, symSize: 0xB4 }
+  - { offsetInCU: 0x3CA, offset: 0x1F3C, size: 0x8, addend: 0x0, symName: _matmul, symObjAddr: 0x660, symBinAddr: 0x100003968, symSize: 0xE0 }
+  - { offsetInCU: 0x426, offset: 0x1F98, size: 0x8, addend: 0x0, symName: _map, symObjAddr: 0x740, symBinAddr: 0x100003A48, symSize: 0xC8 }
+  - { offsetInCU: 0x494, offset: 0x2006, size: 0x8, addend: 0x0, symName: _projectPoint, symObjAddr: 0x808, symBinAddr: 0x100003B10, symSize: 0x60 }
+  - { offsetInCU: 0x4D4, offset: 0x2046, size: 0x8, addend: 0x0, symName: _translate, symObjAddr: 0x868, symBinAddr: 0x100003B70, symSize: 0x50 }
+  - { offsetInCU: 0x514, offset: 0x2086, size: 0x8, addend: 0x0, symName: _createSphere, symObjAddr: 0x8B8, symBinAddr: 0x100003BC0, symSize: 0x20C }
 ...
